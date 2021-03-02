@@ -1,5 +1,5 @@
 {
-  "name": "discord-turks-logs",
+  "name": "discord-turkish-mee-logs",
   "version": "1.0.0",
   "description": "Belirli bir kanala özel denetim günlükleri gönderen basit Discord.js v12 Modülü",
   "main": "discord-turkish-mee-logs.js",
