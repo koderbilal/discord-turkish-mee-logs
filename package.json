@@ -1,0 +1,20 @@
+{
+  "name": "discord-turks-logs",
+  "version": "1.0.0",
+  "description": "Belirli bir kanala özel denetim günlükleri gönderen basit Discord.js v12 Modülü",
+  "main": "discord-turkish-mee-logs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+    "dependencies": {
+  },
+  "keywords": [
+    "discord"
+  ],
+  "author": "dragos",
+  "license": "ISC",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/mehmetkazim0/discord-turkish-mee-logs.git"
+  }
+}
