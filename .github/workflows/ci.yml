@@ -1,27 +1,29 @@
-name: Publish to GitHub Package Registry
-
-on: [push]
-
+name: Node.js Package
+on:
+  release:
+    types: [created]
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js 8.x
-      uses: actions/setup-node@v1
+    - uses: actions/checkout@v2
+    # Setup .npmrc file to publish to npm
+    - uses: actions/setup-node@v1
       with:
-        registry-url: https://npm.pkg.github.com/
-        node-version: 8.x
-        scope: '@mehmetkazim0'
-    - name: npm install, build, and test
-      run: |
-        npm install
-        npm run build --if-present
-        npm test      
-    - name: publish
+        node-version: '10.x'
+        registry-url: 'https://registry.npmjs.org'
+    - run: npm install
+    # Publish to npm
+    - run: npm publish --access public
       env:
-        NODE_AUTH_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-      run: |
-        npm run deploy
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    # Setup .npmrc file to publish to GitHub Packages
+    - uses: actions/setup-node@v1
+      with:
+        registry-url: 'https://npm.pkg.github.com'
+        # Defaults to the user or organization that owns the workflow file
+        scope: '@octocat'
+    # Publish to GitHub Packages
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
