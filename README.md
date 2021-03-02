@@ -3,6 +3,10 @@ Türkçe discord v12 için log modülü
 Arkadaşlar bu proje üstünde çalışıyorum daha, inşallah kısa sürede biter.
 bu arada yararlandığım kaynak: https://github.com/FlisherOfatale/discord-auditlog
 Buradan bakıp yararlanıyorum, inşallah sizde editler ve kendinizi geliştirirsiniz.
+
+```sh
+npm install mehmetkazim0/discord-turkish-mee-logs
+```
   
   
   <p align="center"><a href="https://nodei.co/npm/discord-auditlog/"><img src="https://nodei.co/npm/discord-auditlog.png"></a></p>
