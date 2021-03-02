@@ -7,7 +7,22 @@ Buradan bakıp yararlanıyorum, inşallah sizde editler ve kendinizi geliştirir
 ```sh
 npm install mehmetkazim0/discord-turkish-mee-logs
 ```
-  
+##sadece tek sunucu için
+```js
+const Auditlog = require("discord-turkish-mee-logs");
+
+Auditlog(bot, {
+	"serverid": {
+		auditlog: "audit-log",	
+		movement: "in-out",
+		auditmsg: false, // Default to fasle, recommend to set a channel
+		voice: false, // Set a Channel name if you want it
+		trackroles: true, // Default is False
+		// excludedroles: ['671004697850544111', '671004697850544112']  // This is an OPTIONAL array of Roles ID that won't be tracked
+	}
+});
+```
+  server id yazan yere sunucu id gelecek diğerleri false olan yere ise logu göndermek istediğiniz kanalı yazmanız yeterli.
   
   <p align="center"><a href="https://nodei.co/npm/discord-auditlog/"><img src="https://nodei.co/npm/discord-auditlog.png"></a></p>
 
