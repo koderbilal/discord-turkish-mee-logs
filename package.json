@@ -11,6 +11,9 @@
   "keywords": [
     "discord"
   ],
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/"
+  },
   "author": "dragos",
   "license": "ISC",
   "repository": {
