@@ -720,7 +720,7 @@ ${newMessage.content.replace(/`/g, "'")}
         if (!oldState.channelID && newState.channelID) {
             if (debugmode) console.log(`Module: ${description.name} | voiceStateUpdate:JOINED triggered`)
             embed = {
-                description: `<@${newState.member.user.id}> - *${newState.member.user.id}*`,
+                description: `<@${newState.member.user.id}> (\`${newState.member.user.id}\`)`,
                 url: newState.member.user.displayAvatarURL(),
                 color: 3381555,
                 timestamp: new Date(),
@@ -731,7 +731,7 @@ ${newMessage.content.replace(/`/g, "'")}
                     url: newState.member.user.displayAvatarURL()
                 },
                 author: {
-                    name: `Kanala katıldı : ${newState.member.user.tag}`,
+                    name: `${newState.member.user.tag}`,
                     icon_url: "https://cdn.discordapp.com/emojis/435184638160404480.png"
                 },
                 fields: [{
@@ -756,11 +756,11 @@ ${newMessage.content.replace(/`/g, "'")}
                     url: newState.member.user.displayAvatarURL()
                 },
                 author: {
-                    name: `Kanaldan Ayrıldı : ${newState.member.user.tag}`,
+                    name: `${newState.member.user.tag}`,
                     icon_url: "https://cdn.discordapp.com/emojis/435174900227899393.png"
                 },
                 fields: [{
-                    name: "Şu kanaldan Ayrıldı: ",
+                    name: "Şu kanaldan ayrıldı: ",
                     value: `${oldChannelName}`
                 }]
             }
@@ -774,7 +774,7 @@ ${newMessage.content.replace(/`/g, "'")}
                 if (debugmode) console.log(`Module: ${description.name} | voiceStateUpdate:SWITCH triggered`)
 
                 embed = {
-                    description: `<@${newState.member.user.id}> - *${newState.member.user.id}*`,
+                    description: `<@${newState.member.user.id}> (\`${newState.member.user.id}\`)`,
                     url: newState.member.user.displayAvatarURL(),
                     color: 13421568,
                     timestamp: new Date(),
@@ -785,7 +785,7 @@ ${newMessage.content.replace(/`/g, "'")}
                         url: newState.member.user.displayAvatarURL()
                     },
                     author: {
-                        name: `Kanal değiştirildi : ${newState.member.user.tag}`,
+                        name: `${newState.member.user.tag}`,
                         icon_url: "https://cdn.discordapp.com/emojis/435440286559371265.png"
                     },
                     fields: [{
