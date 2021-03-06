@@ -703,16 +703,16 @@ ${newMessage.content.replace(/`/g, "'")}
 
         if (oldState.channelID) {
             if (typeof oldState.channel.parent !== "undefined") {
-                oldChannelName = `${oldparentname}\n\t**${oldchannelname}**\n*${oldchanelid}*`
+                oldChannelName = `__${oldparentname}__\n❯ ${oldchannelname} (\`${oldchanelid}\`)`
             } else {
-                oldChannelName = `-\n\t**${oldparentname}**\n*${oldchanelid}*`
+                oldChannelName = `**❯ ${oldparentname}**\nID: \`${oldchanelid}\``
             }
         }
         if (newState.channelID) {
             if (typeof newState.channel.parent !== "undefined") {
-                newChannelName = `${newparentname}\n\t**${newchannelname}**\n*${newchanelid}*`
+                newChannelName = `__${newparentname}__\n❯ ${newchannelname} (\`${newchanelid}\`)`
             } else {
-                newChannelName = `-\n\t**${newchannelname}**\n*${newchanelid}*`
+                newChannelName = `**❯ ${newchannelname}**\nID: \`${newchanelid}\``
             }
         }
 
@@ -735,7 +735,7 @@ ${newMessage.content.replace(/`/g, "'")}
                     icon_url: "https://cdn.discordapp.com/emojis/435184638160404480.png"
                 },
                 fields: [{
-                    name: "Kanala katıldı: ",
+                    name: "Şu kanala katıldı: ",
                     value: `${newChannelName}`
                 }]
             }
@@ -760,7 +760,7 @@ ${newMessage.content.replace(/`/g, "'")}
                     icon_url: "https://cdn.discordapp.com/emojis/435174900227899393.png"
                 },
                 fields: [{
-                    name: "Kanaldan Ayrıldı: ",
+                    name: "Şu kanaldan Ayrıldı: ",
                     value: `${oldChannelName}`
                 }]
             }
@@ -789,12 +789,12 @@ ${newMessage.content.replace(/`/g, "'")}
                         icon_url: "https://cdn.discordapp.com/emojis/435440286559371265.png"
                     },
                     fields: [{
-                        name: "Eski Kanalı: ",
+                        name: "Eski kanalı: ",
                         value: `${oldChannelName}`,
                         inline: true
                     },
                     {
-                        name: "Yeni Kanalı: ",
+                        name: "Yeni kanalı: ",
                         value: `${newChannelName}`,
                         inline: true
                     }
